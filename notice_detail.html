@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>공지사항 - 전국청소년노동조합</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/sub.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <div class="util-nav">
+      <div class="container util-container">
+        <ul class="util-links">
+          <li><a href="#">로그인</a></li>
+          <li><a href="#">회원가입</a></li>
+          <li><a href="#">사이트맵</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <header class="main-header">
+      <div class="container header-container">
+        <h1 class="logo"><a href="/"><span class="logo-text">전국청소년노동조합</span></a></h1>
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li><a href="about.html">조합소개</a></li>
+            <li><a href="notice.html">공지사항</a></li>
+            <li><a href="policy.html">정책·자료</a></li>
+            <li><a href="solidarity.html">참여·연대</a></li>
+            <li><a href="donate.html">후원하기</a></li>
+            <li><a href="counsel.html">문의 및 상담</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button class="search-btn" aria-label="검색">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </button>
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴 열기">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="sub-page">
+      <div class="sub-banner">
+        <div class="container">
+          <h2>공지사항</h2>
+        </div>
+      </div>
+      <div class="container sub-layout">
+        <aside class="sub-lnb">
+          <h3>공지사항</h3>
+          <ul class="lnb-list">
+            <li><a href="notice.html" class="active">공지사항</a></li>
+            <li><a href="statement.html">성명/논평</a></li>
+            <li><a href="press.html">보도자료</a></li>
+          </ul>
+        </aside>
+        <div class="sub-content">
+          <div class="content-header">
+            <h3>공지사항</h3>
+            <div class="breadcrumb">HOME &gt; 공지사항 &gt; 공지사항</div>
+          </div>
+          <div class="content-body notice-detail" id="notice-detail-container">
+            <div style="text-align: center; padding: 50px;">
+              <p>데이터를 불러오는 중입니다...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="main-footer">
+      <div class="container">
+        <div class="footer-top">
+          <ul class="footer-links">
+            <li><a href="#" class="privacy">개인정보처리방침</a></li>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">이메일무단수집거부</a></li>
+            <li><a href="#">오시는길</a></li>
+          </ul>
+        </div>
+        <div class="footer-info">
+          <div class="footer-logo">전국청소년노동조합</div>
+          <div class="address-wrap">
+            <p>(00000) 서울특별시 청소년로 123, 노동빌딩 4층</p>
+            <p>
+              <span>전화: 02-1234-5678</span>
+              <span>팩스: 02-1234-5679</span>
+              <span>이메일: info@youthlabor.org</span>
+            </p>
+            <p class="copyright">Copyright © 전국청소년노동조합. All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="scripts/main.js"></script>
+</body>
+</html>
