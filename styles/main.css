@@ -1,7 +1,7 @@
 :root {
   /* Color Palette */
-  --primary-color: #2563eb; /* 짙은 파란색 (주색) */
-  --primary-dark: #1e40af;
+  --primary-color: #3C7EC0; /* 로고 파란색 */
+  --primary-dark: #2C6AAA;
   --secondary-color: #f8fafc;
   --text-dark: #1e293b;
   --text-gray: #64748b;
@@ -190,7 +190,7 @@ button {
 }
 
 .main-banner {
-  background: linear-gradient(135deg, #3C7EC0 0%, #2C6AAA 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
   border-radius: 12px;
   color: var(--white);
   display: flex;
