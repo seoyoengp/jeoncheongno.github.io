@@ -460,6 +460,9 @@ button {
 }
 
 .footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border-bottom: 1px solid rgba(255,255,255,0.1);
   padding-bottom: 20px;
   margin-bottom: 20px;
@@ -468,6 +471,28 @@ button {
 .footer-links {
   display: flex;
   gap: 24px;
+}
+
+.footer-sns {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-sns a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  transition: all 0.2s;
+  color: var(--white);
+}
+
+.footer-sns a:hover {
+  background: var(--primary-color);
+  transform: translateY(-2px);
 }
 
 .footer-links a.privacy {
