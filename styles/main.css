@@ -135,6 +135,27 @@ button {
   color: var(--primary-color);
 }
 
+/* 참여하기 CTA 버튼 */
+.btn-participate {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 20px;
+  background-color: var(--primary-color);
+  color: var(--white) !important;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 999px;
+  letter-spacing: -0.3px;
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+  white-space: nowrap;
+}
+.btn-participate:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}
+
 .mobile-menu-btn {
   display: none;
   flex-direction: column;
