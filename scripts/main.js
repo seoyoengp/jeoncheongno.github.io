@@ -42,8 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
       } else if (path.includes('notice.html')) {
         typesToFetch = ['notice'];
       } else {
-        // 메인 페이지(index.html 등)의 경우 2개 탭만 가져오기
-        typesToFetch = ['notice', 'statement'];
+        // 메인 페이지(index.html 등)의 경우 3개 탭/섹션 가져오기
+        typesToFetch = ['notice', 'statement', 'solidarity'];
       }
 
       // 병렬로 API 호출 (Vercel 서버리스 함수 절대 URL 사용)
@@ -74,7 +74,37 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function renderNotices(notices, type) {
-    // 렌더링 대상 컨테이너 설정 (메인화면 탭)
+    if (type === 'solidarity') {
+      const photoGrid = document.querySelector('.photo-grid');
+      const subpageContent = document.querySelector('.content-body .dummy-box');
+      
+      let html = '';
+      if (notices && notices.length > 0) {
+        html = notices.map(notice => {
+          const bgStyle = notice.photo1 ? `background-image: url('${notice.photo1}'); background-size: cover; background-position: center;` : 'background-color: #cbd5e1;';
+          return `
+            <a href="notice_detail.html?id=${notice.id}&type=${type}" class="photo-card">
+              <div class="img-placeholder" style="${bgStyle}"></div>
+              <div class="card-desc">${notice.title}</div>
+            </a>
+          `;
+        }).join('');
+      } else {
+        html = `<p style="grid-column: 1/-1; text-align:center; padding: 20px;">등록된 활동 소식이 없습니다.</p>`;
+      }
+
+      if (photoGrid && !window.location.pathname.includes('solidarity.html')) {
+        photoGrid.innerHTML = html;
+      }
+      
+      const isSubpage = window.location.pathname.includes('solidarity.html');
+      if (subpageContent && isSubpage) {
+        subpageContent.parentElement.innerHTML = `<div class="photo-grid">${html}</div>`;
+      }
+      return;
+    }
+
+    // 기존 텍스트 리스트 렌더링 (공지사항, 성명 등)
     let tabId = '#tab1';
     if (type === 'statement') tabId = '#tab2';
     if (type === 'press') tabId = '#tab3';
