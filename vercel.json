@@ -16,6 +16,10 @@
     {
       "src": "scripts/**/*.js",
       "use": "@vercel/static"
+    },
+    {
+      "src": "**/*.{png,jpg,jpeg,svg,ico}",
+      "use": "@vercel/static"
     }
   ],
   "headers": [
