@@ -3,13 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>조합소개 - 전국청소년노동조합</title>
+  <title>사이트맵 - 전국청소년노동조합</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/sub.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    .sitemap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-top: 20px;
+    }
+    .sitemap-group {
+      background: var(--bg-light);
+      padding: 24px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+    .sitemap-group h4 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--primary-color);
+    }
+    .sitemap-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sitemap-list li {
+      margin-bottom: 10px;
+    }
+    .sitemap-list a {
+      font-size: 15px;
+      color: var(--text-dark);
+      transition: color 0.2s;
+    }
+    .sitemap-list a:hover {
+      color: var(--primary-color);
+      font-weight: 500;
+    }
+  </style>
 </head>
 <body>
   <div id="app">
@@ -17,8 +56,8 @@
     <div class="util-nav">
       <div class="container util-container">
         <ul class="util-links">
-          <li><a href="#">로그인</a></li>
-          <li><a href="#">회원가입</a></li>
+          <li><a href="login.html">로그인</a></li>
+          <li><a href="signup.html">회원가입</a></li>
           <li><a href="sitemap.html">사이트맵</a></li>
         </ul>
       </div>
@@ -55,33 +94,72 @@
     <main class="sub-page">
       <div class="sub-banner">
         <div class="container">
-          <h2>조합소개</h2>
+          <h2>사이트맵</h2>
         </div>
       </div>
       
       <div class="container sub-layout">
         <!-- LNB (좌측 메뉴) -->
         <aside class="sub-lnb">
-          <h3>조합소개</h3>
+          <h3>서비스 안내</h3>
           <ul class="lnb-list">
-            <li><a href="#" class="active">인사말</a></li>
-            <li><a href="#">설립취지</a></li>
-            <li><a href="#">조직도</a></li>
-            <li><a href="#">찾아오시는 길</a></li>
+            <li><a href="sitemap.html" class="active">사이트맵</a></li>
           </ul>
         </aside>
         
         <!-- 우측 본문 영역 -->
         <div class="sub-content">
           <div class="content-header">
-            <h3>인사말</h3>
-            <div class="breadcrumb">HOME &gt; 조합소개 &gt; 인사말</div>
+            <h3>사이트맵</h3>
+            <div class="breadcrumb">HOME &gt; 사이트맵</div>
           </div>
           <div class="content-body">
-            <p>전국청소년노동조합에 방문해 주셔서 감사합니다.</p>
-            <p>우리는 청소년 노동자들의 정당한 권리를 보장받고, 더 나은 노동 환경을 만들어가기 위해 연대합니다.</p>
-            <div class="dummy-box">
-              인사말 본문 내용이 들어갈 자리입니다.
+            <div class="sitemap-grid">
+              
+              <div class="sitemap-group">
+                <h4><a href="about.html">조합소개</a></h4>
+                <ul class="sitemap-list">
+                  <li><a href="about.html">인사말</a></li>
+                  <li><a href="about.html">설립취지</a></li>
+                  <li><a href="about.html">조직도</a></li>
+                  <li><a href="about.html">찾아오시는 길</a></li>
+                </ul>
+              </div>
+
+              <div class="sitemap-group">
+                <h4><a href="notice.html">공지/소식</a></h4>
+                <ul class="sitemap-list">
+                  <li><a href="notice.html">공지사항</a></li>
+                  <li><a href="statement.html">성명/논평</a></li>
+                </ul>
+              </div>
+
+              <div class="sitemap-group">
+                <h4><a href="solidarity.html">연대</a></h4>
+                <ul class="sitemap-list">
+                  <li><a href="solidarity.html">연대소식</a></li>
+                </ul>
+              </div>
+
+              <div class="sitemap-group">
+                <h4><a href="join.html">참여하기</a></h4>
+                <ul class="sitemap-list">
+                  <li><a href="join.html">조합원 가입</a></li>
+                  <li><a href="donate.html">후원하기</a></li>
+                  <li><a href="counsel.html">문의 및 상담</a></li>
+                </ul>
+              </div>
+
+              <div class="sitemap-group">
+                <h4>기타 안내</h4>
+                <ul class="sitemap-list">
+                  <li><a href="login.html">로그인</a></li>
+                  <li><a href="signup.html">회원가입</a></li>
+                  <li><a href="#">개인정보처리방침</a></li>
+                  <li><a href="#">이용약관</a></li>
+                </ul>
+              </div>
+
             </div>
           </div>
         </div>
@@ -114,7 +192,6 @@
       </div>
     </footer>
   </div>
-
   <script src="scripts/main.js"></script>
 </body>
 </html>
