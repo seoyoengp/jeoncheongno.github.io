@@ -233,6 +233,22 @@
   color: var(--text-dark);
 }
 
+.auth-notice {
+  background-color: var(--bg-light);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--primary-color);
+  padding: 16px;
+  border-radius: 4px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+.auth-notice strong {
+  color: var(--primary-color);
+}
+
 .auth-form .form-group {
   margin-bottom: 20px;
 }
