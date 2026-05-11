@@ -569,4 +569,17 @@ button {
   .banner-content p {
     font-size: 15px;
   }
+
+  .logo-img {
+    height: 48px;
+  }
+  
+  .header-actions {
+    gap: 8px;
+  }
+  
+  .btn-participate {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
 }
