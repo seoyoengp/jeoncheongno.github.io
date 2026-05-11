@@ -77,15 +77,23 @@ module.exports = async function handler(req, res) {
       const richTextArr = page.properties['내용']?.rich_text || [];
       const content = richTextArr.map(t => t.plain_text).join('').replace(/\n/g, '<br>');
 
+      // 파일 속성에서 URL 추출 함수
+      const getFileUrl = (propName) => {
+        const prop = page.properties[propName];
+        if (!prop || prop.type !== 'files' || !prop.files || prop.files.length === 0) return null;
+        const file = prop.files[0];
+        return file.file ? file.file.url : (file.external ? file.external.url : null);
+      };
+
       return {
         id: page.id,
         title: page.properties['제목']?.title[0]?.plain_text || '제목 없음',
         date: page.properties['게시일']?.date?.start || '날짜 없음',
-        url: page.url, // 외부 Notion 링크 (옵션용)
+        url: page.url,
         content: content,
-        photo1: page.properties['사진 1']?.url || null,
-        photo2: page.properties['사진 2']?.url || null,
-        attachment: page.properties['첨부파일 URL']?.url || null,
+        photo1: getFileUrl('사진 1'),
+        photo2: getFileUrl('사진 2'),
+        attachment: getFileUrl('첨부파일 URL'),
       };
     });
 
