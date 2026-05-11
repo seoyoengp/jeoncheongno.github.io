@@ -37,13 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
         typesToFetch = [detailType];
       } else if (path.includes('statement.html')) {
         typesToFetch = ['statement'];
-      } else if (path.includes('press.html')) {
-        typesToFetch = ['press'];
       } else if (path.includes('notice.html')) {
         typesToFetch = ['notice'];
       } else {
-        // 메인 페이지(index.html 등)의 경우 3개 탭 모두 가져오기
-        typesToFetch = ['notice', 'statement', 'press'];
+        // 메인 페이지(index.html 등)의 경우 2개 탭만 가져오기
+        typesToFetch = ['notice', 'statement'];
       }
 
       // 병렬로 API 호출 (Vercel 서버리스 함수 절대 URL 사용)
