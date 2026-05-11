@@ -12,7 +12,6 @@ module.exports = async function handler(req, res) {
   const NOTION_API_KEY = process.env.NOTION_API_KEY;
   
   // URL에서 type 파라미터 읽기 (예: /api/notion?type=statement)
-  // URL 인스턴스를 통해 query 파라미터 파싱 (Express, Vercel 환경에 따라 req.query를 우선 사용)
   let type = 'notice';
   if (req.query && req.query.type) {
     type = req.query.type;
@@ -21,14 +20,15 @@ module.exports = async function handler(req, res) {
     type = urlParams.get('type') || 'notice';
   }
 
+  // 타입별 API 키 및 DB ID 설정
+  let API_KEY = NOTION_API_KEY;
   let NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID; // 기본값 (공지사항)
   if (type === 'statement') {
+    API_KEY = process.env.NOTION_API_KEY_STATEMENT || NOTION_API_KEY;
     NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID_STATEMENT || NOTION_DATABASE_ID;
-  } else if (type === 'press') {
-    NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID_PRESS || NOTION_DATABASE_ID;
   }
 
-  if (!NOTION_API_KEY || !NOTION_DATABASE_ID) {
+  if (!API_KEY || !NOTION_DATABASE_ID) {
     return res.status(500).json({ error: 'Missing Notion API Key or Database ID in environment variables.' });
   }
 
@@ -37,7 +37,7 @@ module.exports = async function handler(req, res) {
   const options = {
     method: 'POST',
     headers: {
-      'Authorization': `Bearer ${NOTION_API_KEY}`,
+      'Authorization': `Bearer ${API_KEY}`,
       'Notion-Version': '2022-06-28',
       'Content-Type': 'application/json'
     },
