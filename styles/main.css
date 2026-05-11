@@ -555,4 +555,18 @@ button {
     flex-direction: column;
     gap: 20px;
   }
+
+  .main-banner {
+    padding: 32px 24px;
+    min-height: 240px;
+  }
+  
+  .banner-content h2 {
+    font-size: 24px;
+    word-break: keep-all;
+  }
+  
+  .banner-content p {
+    font-size: 15px;
+  }
 }
