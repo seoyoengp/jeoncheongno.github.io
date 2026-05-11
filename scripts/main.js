@@ -37,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
         typesToFetch = [detailType];
       } else if (path.includes('statement.html')) {
         typesToFetch = ['statement'];
+      } else if (path.includes('solidarity.html')) {
+        typesToFetch = ['solidarity'];
       } else if (path.includes('notice.html')) {
         typesToFetch = ['notice'];
       } else {

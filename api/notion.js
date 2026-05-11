@@ -26,6 +26,9 @@ module.exports = async function handler(req, res) {
   if (type === 'statement') {
     API_KEY = process.env.NOTION_API_KEY_STATEMENT || NOTION_API_KEY;
     NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID_STATEMENT || NOTION_DATABASE_ID;
+  } else if (type === 'solidarity') {
+    API_KEY = process.env.NOTION_API_KEY_SOLIDARITY || NOTION_API_KEY;
+    NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID_SOLIDARITY || NOTION_DATABASE_ID;
   }
 
   if (!API_KEY || !NOTION_DATABASE_ID) {
