@@ -190,7 +190,7 @@ button {
 }
 
 .main-banner {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  background: linear-gradient(135deg, #3C7EC0 0%, #2C6AAA 100%);
   border-radius: 12px;
   color: var(--white);
   display: flex;
