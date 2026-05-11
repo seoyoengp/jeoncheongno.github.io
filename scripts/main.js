@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // 병렬로 API 호출 (Vercel 서버리스 함수 절대 URL 사용)
       const API_BASE = 'https://jeoncheongno-github-io.vercel.app';
       const fetchPromises = typesToFetch.map(type => 
-        fetch(`${API_BASE}/api/notion?type=${type}`).then(res => {
+        fetch(`${API_BASE}/api/notion.js?type=${type}`).then(res => {
           if (!res.ok) throw new Error('네트워크 응답이 올바르지 않습니다.');
           return res.json().then(data => ({ type, data }));
         })
