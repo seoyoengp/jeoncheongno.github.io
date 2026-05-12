@@ -507,9 +507,19 @@ button {
 }
 
 .footer-logo {
-  font-size: 20px;
-  font-weight: 900;
-  color: var(--white);
+  margin-bottom: 0;
+}
+
+.footer-logo-img {
+  height: 60px;
+  width: auto;
+  filter: brightness(0) invert(1); /* 어두운 배경에서 가독성을 위해 흰색으로 반전 */
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.footer-logo-img:hover {
+  opacity: 1;
 }
 
 .address-wrap p {

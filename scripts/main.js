@@ -299,7 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
       utilLinks.innerHTML = `
         <li><span style="font-size:12px; font-weight:700;">${currentUser.name} 님 환영합니다</span></li>
         <li><a href="#" id="logoutBtn">로그아웃</a></li>
-        <li><a href="#">사이트맵</a></li>
+        <li><a href="sitemap.html">사이트맵</a></li>
       `;
       
       // 로그아웃 이벤트 등록
@@ -316,7 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
       utilLinks.innerHTML = `
         <li><a href="login.html">로그인</a></li>
         <li><a href="signup.html">회원가입</a></li>
-        <li><a href="#">사이트맵</a></li>
+        <li><a href="sitemap.html">사이트맵</a></li>
       `;
     }
   }
